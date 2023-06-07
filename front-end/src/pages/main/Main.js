@@ -1,12 +1,28 @@
-import React from 'react';
-import './Main.css';
+import React from "react";
+import "./Main.css";
+import Jackpot from "../../components/Jackpot";
+import Timer from "../../components/Timer";
 
-export default function Main(){
-    return(
+export default function Main() {
+    
+    const today = new Date();
+    const [targetDate, setTargetDate] = React.useState(today.getTime() + 518400000);
+
+    React.useEffect(() => {
+        setTargetDate(today.getTime() + 518400000);
+    }, []);
+
+    return (
         <div className="Main">
-            <p>
-                Main
-            </p>
+            <Jackpot />
+            <div className="main_section">
+                <div className="main_section_left">
+                    <Timer targetDate={targetDate} />
+                </div>
+                <div className="main_section_right">
+
+                </div>
+            </div>
         </div>
     );
 }
