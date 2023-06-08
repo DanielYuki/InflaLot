@@ -2,6 +2,7 @@ import React from "react";
 import "./Main.css";
 import Jackpot from "../../components/Jackpot";
 import Timer from "../../components/Timer";
+import PurchaseTickets from "../../components/PurchaseTickets";
 
 export default function Main() {
     
@@ -20,7 +21,7 @@ export default function Main() {
                     <Timer targetDate={targetDate} />
                 </div>
                 <div className="main_section_right">
-
+                    <PurchaseTickets />
                 </div>
             </div>
         </div>
