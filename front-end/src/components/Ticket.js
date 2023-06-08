@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 
-export default function Ticket({ owner, bet, date }){
+export default function Ticket({ owner, bet, date }) {
     return (
         <div className="Ticket">
-            <h3>Owner: {owner}</h3>
-            <h4>Bet: {bet}</h4>
-            <h5>Date: {date}</h5>
+            <div className="ticket_content">
+                {/* <h3>Owner: {owner}</h3> */}
+                <h4>Bet: <span>{bet}</span>%</h4>
+                <h5>Date: <span>{date}</span></h5>
+            </div>
         </div>
     );
 }

@@ -51,4 +51,10 @@
             color: var(--main-color);
         }
     }
+
+    .logo {
+        height: 8vh;
+        margin: 0;
+        padding: 0;
+    }
 }

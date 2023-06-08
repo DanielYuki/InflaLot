@@ -7,34 +7,24 @@ export default function TicketsSection() {
 
     const tickets = [
         {
-            owner: "Card 1",
-            bet: "This is card 1.",
-            date: "2021-04-20",
+            // owner: " 1",
+            bet: " 13.094",
+            date: "04/20/23",
         },
         {
-            owner: "Card 2",
-            bet: "This is card 2.",
-            date: "2021-04-20",
+            // owner: " 2",
+            bet: " 16.395",
+            date: "04/20/23",
         },
         {
-            owner: "Card 3",
-            bet: "This is card 3.",
-            date: "2021-04-20",
+            // owner: " 3",
+            bet: " 11.085",
+            date: "04/20/23",
         },
         {
-            owner: "Card 4",
-            bet: "This is card 4.",
-            date: "2021-04-20",
-        },
-        {
-            owner: "Card 5",
-            bet: "This is card 5.",
-            date: "2021-04-20",
-        },
-        {
-            owner: "Card 6",
-            bet: "This is card 6.",
-            date: "2021-04-20",
+            // owner: " 4",
+            bet: " 13.089",
+            date: "04/20/23",
         },
         // Add more ticket objects as needed
     ];

@@ -1,5 +1,6 @@
 import React from "react";
 import { ethers } from "ethers"; //using ethers 5.7
+import logo from "../img/logo.png";
 
 export default function Header() {
     const [currentAccount, setCurrentAccount] = React.useState(null);
@@ -45,9 +46,10 @@ export default function Header() {
 
     return (
         <div className="Header">
-            <h1>
+            {/* <h1>
                 Infla<b>Lot</b>
-            </h1>
+            </h1> */}
+            <img className="logo" src={logo} alt="Infralot_logo" />
             <button className="connect_wallet" onClick={connectToMetaMask}>
                 {currentAccount
                     ? "Wallet Connected: " + currentAccount.substring(0, 5) +
