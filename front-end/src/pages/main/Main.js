@@ -3,6 +3,7 @@ import "./Main.css";
 import Jackpot from "../../components/Jackpot";
 import Timer from "../../components/Timer";
 import PurchaseTickets from "../../components/PurchaseTickets";
+import TrufflationIndex from "../../components/TrufflationIndex";
 
 export default function Main() {
     
@@ -19,6 +20,7 @@ export default function Main() {
             <div className="main_section">
                 <div className="main_section_left">
                     <Timer targetDate={targetDate} />
+                    <TrufflationIndex />
                 </div>
                 <div className="main_section_right">
                     <PurchaseTickets />

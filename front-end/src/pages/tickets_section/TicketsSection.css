@@ -1,0 +1,71 @@
+.Tickets_Section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+/* NUM PLAYERS CSS */
+.Num_Players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    padding: 2.5rem 1rem;
+}
+
+.Num_Players h2 {
+    color: var(--main-color);
+}
+
+/* USER TICKETS CSS */
+.UserTickets {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    padding: 1.5rem;
+    color: var(--main-color);
+}
+
+.Tickets {
+    width: 80%;
+    /* background-color: var(--main-bg-color); */
+    color: var(--secondary-color);
+    align-self: center;
+    /* overflow: hidden; */
+}
+
+.Ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.slick-slider .slick-dots li {
+    margin: 0.5rem;
+}
+
+.slick-slider .slick-dots li.slick-active button:before {
+    cursor: pointer;
+    color: var(--main-color);
+}

@@ -17,8 +17,16 @@
 .main_section {
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.main_section_left {
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /* JACKPOT CSS */
@@ -34,7 +42,7 @@
 
 .Jackpot_title {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--secondary-color);
     margin: 0;
     padding: 0;
@@ -42,10 +50,10 @@
 }
 
 .Jackpot_value {
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: 700;
     color: var(--main-color);
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
     letter-spacing: 4px;
 }
@@ -60,7 +68,7 @@
 
 /* TIMER CSS */
 .Timer {
-    width: 50%;
+    width: 100%;
     padding: 1rem;
 }
 
@@ -130,4 +138,27 @@
         background-color: var(--secondary-color);
         color: var(--main-color);
     }
+}
+
+/* SHOW TRUFFLATION INDEX CSS */
+
+.TrufflationIndex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    letter-spacing: 2px;
+}
+
+.TrufflationIndex h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.TrufflationIndex h3 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    padding: 1rem;
 }
