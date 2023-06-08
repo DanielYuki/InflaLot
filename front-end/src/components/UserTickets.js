@@ -4,7 +4,8 @@ import Ticket from "./Ticket";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function UserTickets({ tickets }) {
+export default function UserTickets({ tickets, address }) {
+
     const settings = {
         dots: true,
         infinite: true,
@@ -13,17 +14,33 @@ export default function UserTickets({ tickets }) {
         slidesToScroll: 1,
     };
 
+    const headingStyle = {
+        marginTop: "100px",
+    };
+
     return (
         <div className="UserTickets">
             <h2>YOUR TICKETS:</h2>
             <div className="Tickets">
-                <Slider {...settings}>
-                    {tickets.map((ticket, index) => (
-                        <div key={index}>
-                            <Ticket {...ticket} />
-                        </div>
-                    ))}
-                </Slider>
+                {address ? (
+                    tickets[0] != null ? (
+                        <Slider {...settings}>
+                            {tickets.map((ticket, index) => (
+                                <div key={index}>
+                                    <Ticket {...ticket} />
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : (
+                        <h3 style={headingStyle}>
+                            You don't have any tickets yet
+                        </h3>
+                    )
+                ) : (
+                    <h3 style={headingStyle}>
+                        Connect your wallet to see your tickets
+                    </h3>
+                )}
             </div>
         </div>
     );

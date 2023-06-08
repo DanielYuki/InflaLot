@@ -3,7 +3,7 @@ import "./TicketsSection.css";
 import NumPlayers from "../../components/NumPlayers";
 import UserTickets from "../../components/UserTickets";
 
-export default function TicketsSection() {
+export default function TicketsSection({address}) {
 
     const tickets = [
         {
@@ -32,7 +32,7 @@ export default function TicketsSection() {
     return (
         <div className="Tickets_Section">
             <NumPlayers />
-            <UserTickets tickets={tickets}/>
+            <UserTickets tickets={tickets} address={address}/>
         </div>
     );
 }

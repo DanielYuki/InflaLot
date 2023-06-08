@@ -5,7 +5,7 @@ import Timer from "../../components/Timer";
 import PurchaseTickets from "../../components/PurchaseTickets";
 import TrufflationIndex from "../../components/TrufflationIndex";
 
-export default function Main() {
+export default function Main({signer}) {
     
     const today = new Date();
     const [targetDate, setTargetDate] = React.useState(today.getTime() + 518400000);
@@ -16,7 +16,7 @@ export default function Main() {
 
     return (
         <div className="Main">
-            <Jackpot />
+            <Jackpot signer={signer}/>
             <div className="main_section">
                 <div className="main_section_left">
                     <Timer targetDate={targetDate} />
