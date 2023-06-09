@@ -58,3 +58,23 @@
         padding: 0;
     }
 }
+
+/* Styles for the scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--secondary-bg-color); /* Color of the track */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f6734c; /* Color of the handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color); /* Color of the handle on hover */
+  }

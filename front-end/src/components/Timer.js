@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Timer({ targetDate }) {
+export default function Timer({ targetDate, canBet }) {
     // const [timeLeft, setTimeLeft] = React.useState(0);
     const [days, setDays] = React.useState(0);
     const [hours, setHours] = React.useState(0);
@@ -46,29 +46,41 @@ export default function Timer({ targetDate }) {
 
     return (
         <div className="Timer">
-            <h3 className="Timer_title">TIME LEFT:</h3>
-            <h2 className="Timer_value">
-                {/* {timeLeft} */}
+            <h3 className="Timer_title">
+                {canBet ? "TIME LEFT TO BET:" : "Betting Time is Over!"}
+            </h3>
+            {canBet ? (
+                <h2 className="Timer_value">
+                    {/* {timeLeft} */}
+                    <div className="value_section">
+                        <h2>{String(days).padStart(2, "0")}</h2>
+                        <h4>DAYS</h4>
+                    </div>
+                    :
+                    <div className="value_section">
+                        <h2>{String(hours).padStart(2, "0")}</h2>
+                        <h4>HOURS</h4>
+                    </div>
+                    :
+                    <div className="value_section">
+                        <h2>{String(minutes).padStart(2, "0")}</h2>
+                        <h4>MINUTES</h4>
+                    </div>
+                    :
+                    <div className="value_section">
+                        <h2>{String(seconds).padStart(2, "0")}</h2>
+                        <h4>SECONDS</h4>
+                    </div>
+                </h2>
+            ) : (
                 <div className="value_section">
-                    <h2>{String(days).padStart(2,'0')}</h2>
-                    <h4>DAYS</h4>
+                    <h4>
+                        Keep an eye on your wallet. 
+                        The next Trufflation Index will
+                        soon be revealed !!
+                    </h4>
                 </div>
-                :
-                <div className="value_section">
-                    <h2>{String(hours).padStart(2,'0')}</h2>
-                    <h4>HOURS</h4>
-                </div>
-                :
-                <div className="value_section">
-                    <h2>{String(minutes).padStart(2,'0')}</h2>
-                    <h4>MINUTES</h4>
-                </div>
-                :
-                <div className="value_section">
-                    <h2>{String(seconds).padStart(2,'0')}</h2>
-                    <h4>SECONDS</h4>
-                </div>
-            </h2>
+            )}
         </div>
     );
 }

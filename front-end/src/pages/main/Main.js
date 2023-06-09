@@ -13,6 +13,8 @@ export default function Main({signer}) {
     const today = new Date();
     const [targetDate, setTargetDate] = React.useState(today.getTime());
 
+    const [canBet, setCanBet] = React.useState(true);
+
     async function getTime() {
         try {
             const time = await contract.getTimeLeft();
@@ -41,16 +43,30 @@ export default function Main({signer}) {
         fetchTime();
     }, [signer]);
 
+    React.useEffect(() => {
+        const intervalId = setInterval(() => {
+            if (targetDate - today.getTime() <= 0) {
+                console.log("Cannot bet anymore!");
+                setCanBet(false);
+                clearInterval(intervalId);
+            }
+        }, 1000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [targetDate]);
+
     return (
         <div className="Main">
             <Jackpot signer={signer}/>
             <div className="main_section">
                 <div className="main_section_left">
-                    <Timer targetDate={targetDate} />
+                    <Timer targetDate={targetDate} canBet={canBet} />
                     <TrufflationIndex signer={signer} />
                 </div>
                 <div className="main_section_right">
-                    <PurchaseTickets signer={signer} />
+                    <PurchaseTickets signer={signer} canBet={canBet} />
                 </div>
             </div>
         </div>
