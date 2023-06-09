@@ -1,0 +1,1 @@
+The presentation folder has an altered version of the "Lottery.sol" contract (the front-end used is the same as the original) that allows the simulation of the getWinner function during the project's video presentation, since the original version can only be activated by the Upkeep Admin address (the Chainlink Automation) at the end of the month period.
