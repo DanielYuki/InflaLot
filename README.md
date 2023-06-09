@@ -1,6 +1,6 @@
 # *InflaLot - Rewarding the study of the market*
 
-InflaLot is a dApp desenvolved on React that, inspired by the TruflationIndex, allows individuals to bet on the value of the dolar's inflation of the next month. If the bet is correct, the winner receives a price, based on the total acumulated (the sum of all the bets) in the month. This is possible thanks to the combination of a web platform, the ChainLink Oracle, the Truflation data and the infinite possibilities that Blockchain and Web3 have.
+InflaLot is a dApp developed on React that, inspired by the TruflationIndex, allows individuals to bet on the value of the dolar's inflation of the next month. If the bet is correct, the winner receives a price, based on the total acumulated (the sum of all the bets) in the month. This is possible thanks to the combination of a web platform, the ChainLink Oracle, the Truflation data and the infinite possibilities that Blockchain and Web3 have.
 
 ![alt](https://github.com/DanielYuki/InflaLot/assets/133140820/9731b6ea-30c8-4549-a457-b4f3c8d93f19)
 
