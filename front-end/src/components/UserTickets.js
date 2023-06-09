@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function UserTickets({ tickets, address }) {
-
     const settings = {
         dots: true,
         infinite: true,
@@ -24,13 +23,19 @@ export default function UserTickets({ tickets, address }) {
             <div className="Tickets">
                 {address ? (
                     tickets != null ? (
-                        <Slider {...settings}>
-                            {tickets.map((ticket, index) => (
-                                <div key={index}>
-                                    <Ticket {...ticket} />
-                                </div>
-                            ))}
-                        </Slider>
+                        tickets.length > 0 ? (
+                            <Slider {...settings}>
+                                {tickets.map((ticket, index) => (
+                                    <div key={index}>
+                                        <Ticket {...ticket} />
+                                    </div>
+                                ))}
+                            </Slider>
+                        ) : (
+                            <h3 style={headingStyle}>
+                                You don't have any tickets yet
+                            </h3>
+                        )
                     ) : (
                         <h3 style={headingStyle}>
                             You don't have any tickets yet

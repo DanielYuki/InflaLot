@@ -32,7 +32,7 @@ export default function NumPlayers({signer}) {
         <div className="Num_Players">
             {/* <img src="" alt="num_players" /> */}
             <h2>NUM OF PLAYERS:</h2>
-            <h3>{numPlayers ? numPlayers : "There are no players yet"}</h3>
+            <h3>{numPlayers ? numPlayers : <h4>There are no players yet</h4>}</h3>
         </div>
     );
 }
