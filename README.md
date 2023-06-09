@@ -35,4 +35,4 @@ By leveraging the capabilities of smart contracts and incorporating the concept 
 
 Overall, this innovative approach to betting on inflation not only adds an element of excitement to the game but also promotes financial literacy and encourages players to stay updated with real-world economic developments.
 
-![alt](https://github.com/DanielYuki/InflaLot/assets/133140820/b32e3558-26f7-4729-a344-09f6b0b78e87)\
+![alt](https://github.com/DanielYuki/InflaLot/assets/133140820/b32e3558-26f7-4729-a344-09f6b0b78e87)
