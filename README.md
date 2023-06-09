@@ -16,8 +16,10 @@ InflaLot is a dApp desenvolved on React that, inspired by the TruflationIndex, a
 
 ## *Used Tecnologies*
 
-- Front-end : React.js;
-- Smart Contracts : Solidity ^0.8.17;
+- React.js
+- Solidity ^0.8.17
+- ChainLink Automation
+- Ethers.js
 
 ## *Funcionality of InflaLot*
 
