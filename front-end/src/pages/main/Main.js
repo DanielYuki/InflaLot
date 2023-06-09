@@ -4,15 +4,42 @@ import Jackpot from "../../components/Jackpot";
 import Timer from "../../components/Timer";
 import PurchaseTickets from "../../components/PurchaseTickets";
 import TrufflationIndex from "../../components/TrufflationIndex";
+import { ethers } from "ethers";
+import { contractABI, contractAddress } from "../../utils/contract";
 
 export default function Main({signer}) {
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
     
     const today = new Date();
-    const [targetDate, setTargetDate] = React.useState(today.getTime() + 518400000);
+    const [targetDate, setTargetDate] = React.useState(today.getTime());
+
+    async function getTime() {
+        try {
+            const time = await contract.getTimeLeft();
+            return time.toString();
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
 
     React.useEffect(() => {
-        setTargetDate(today.getTime() + 518400000);
-    }, []);
+        async function fetchTime() {
+            try {
+                const time = await getTime(); 
+                console.log(time);
+                setTargetDate((prevTime) => {
+                    if (time !== prevTime) {
+                        // setTimeLeft(time);
+                        return today.getTime() + time*1000;
+                    }
+                    return prevTime;
+                });
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+        fetchTime();
+    }, [signer]);
 
     return (
         <div className="Main">

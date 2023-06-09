@@ -14,6 +14,7 @@ export default function Timer({ targetDate }) {
 
             if (distance < 0) {
                 // The countdown is over
+                console.log("Countdown Over!");
                 clearInterval(intervalId);
                 // setTimeLeft("Countdown Over!");
             } else {
