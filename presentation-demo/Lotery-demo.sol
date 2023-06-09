@@ -16,7 +16,6 @@ contract Lotery is ChainlinkClient, ConfirmedOwner {
   string jobId = "d220e5e687884462909a03021385b7ae";
   uint256 fee = 500000000000000000;
   address tokenAddress = 0x326C977E6efc84E512bB9C30f76E30c160eD06FB;
-  address upkeepAdminAddress = 0x5e6253585429251901c6463c1fbdE9AAB9FE43dA;
   
   // Deploying TicketSystem instance
   TicketSystem public activePlayers = new TicketSystem();
@@ -24,7 +23,6 @@ contract Lotery is ChainlinkClient, ConfirmedOwner {
 
   constructor() ConfirmedOwner(msg.sender){
     setChainlinkToken(tokenAddress);
-    transferOwnership(upkeepAdminAddress);
   }
   
   // In case you need to change the blockchain network from which
@@ -48,7 +46,20 @@ contract Lotery is ChainlinkClient, ConfirmedOwner {
   }
   */
 
-  function getWinner() public onlyOwner{
+  // for debugging
+  /*
+  function withdrawLink() public onlyOwner {
+    LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
+    require(link.transfer(msg.sender, link.balanceOf(address(this))),
+    "Unable to transfer");
+  }
+
+  function withdraw() public onlyOwner {
+    payable(msg.sender).transfer(address(this).balance);
+  }
+  */
+
+  function getWinner() public{
     requestInflationWei();
     winnerTicket = activePlayers.determineCloser(inflationWei);
     winnerTicket.playerAddress.transfer(uint256((95 * address(this).balance)/100));
