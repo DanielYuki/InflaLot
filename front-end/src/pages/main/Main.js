@@ -20,10 +20,10 @@ export default function Main({signer}) {
             <div className="main_section">
                 <div className="main_section_left">
                     <Timer targetDate={targetDate} />
-                    <TrufflationIndex />
+                    <TrufflationIndex signer={signer} />
                 </div>
                 <div className="main_section_right">
-                    <PurchaseTickets />
+                    <PurchaseTickets signer={signer} />
                 </div>
             </div>
         </div>

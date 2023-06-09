@@ -28,7 +28,7 @@ function App() {
         <div className="App">
             <Header handleConnect={handleConnect} address={address}/>
             <Main signer={signer}/>
-            <TicketsSection address={address}/>
+            <TicketsSection address={address} signer={signer}/>
         </div>
     );
 }

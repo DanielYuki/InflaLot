@@ -23,7 +23,7 @@ export default function UserTickets({ tickets, address }) {
             <h2>YOUR TICKETS:</h2>
             <div className="Tickets">
                 {address ? (
-                    tickets[0] != null ? (
+                    tickets != null ? (
                         <Slider {...settings}>
                             {tickets.map((ticket, index) => (
                                 <div key={index}>

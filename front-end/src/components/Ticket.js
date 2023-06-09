@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Ticket({ owner, bet, date }) {
+export default function Ticket({ bet, date }) {
     return (
         <div className="Ticket">
             <div className="ticket_content">
