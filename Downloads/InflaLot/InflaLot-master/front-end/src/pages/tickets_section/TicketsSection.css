@@ -1,0 +1,154 @@
+.Tickets_Section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+/* NUM PLAYERS CSS */
+.Num_Players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+    height: 35vh;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    /* padding: 2.5rem 1rem; */
+    padding: 1.5rem;
+}
+
+.Num_Players h2 {
+    color: var(--main-color);
+    align-self: flex-start;
+}
+
+.Num_Players h3 {
+    color: var(--secondary-color);
+    font-size: 6.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.Num_Players h4 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* USER TICKETS CSS */
+.UserTickets {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    height: 35vh;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    padding: 1.5rem;
+    color: var(--main-color);
+}
+
+.Tickets {
+    width: 80%;
+    /* background-color: var(--main-bg-color); */
+    color: var(--secondary-color);
+    align-self: center;
+    /* overflow: hidden; */
+}
+
+.Ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    background-color: var(--secondary-bg-color);
+    /* box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.205); */
+    /* border: 5px solid var(--main-color); */
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    position: relative;
+    box-shadow: inset 0 0 0 5px var(--main-color);
+    overflow: hidden;
+}
+
+.Ticket::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 0px 30px 30px 0;
+    border: 5px solid var(--main-color);
+    border-left: 0 solid transparent;
+}
+
+.Ticket::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 30px 0 0 30px;
+    border: 5px solid var(--main-color);
+    border-right: 0 solid transparent;
+}
+
+.ticket_content {
+    border: 2px solid var(--main-color);
+    margin: 0.5rem 2rem;
+    padding: 1.5rem 1rem;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.ticket_content::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 0px;
+    height: 130px;
+    background-color: var(--secondary-bg-color);
+    border: 2.5px dashed var(--main-color);
+}
+
+.ticket_content h4,
+h5 {
+    color: var(--main-color);
+    /* color: gray; */
+}
+
+.ticket_content span {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.slick-slider .slick-dots li {
+    margin: 0.5rem;
+}
+
+.slick-slider .slick-dots li.slick-active button:before {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: var(--main-color) !important;
+}
