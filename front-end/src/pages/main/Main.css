@@ -29,6 +29,24 @@
     flex-direction: column;
 }
 
+.mm_not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.mm_not_found spam {
+    color: var(--main-color);
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-left: 0.75rem;
+}
+
 /* JACKPOT CSS */
 .Jackpot {
     width: 100%;

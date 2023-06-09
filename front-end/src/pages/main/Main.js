@@ -7,9 +7,9 @@ import TrufflationIndex from "../../components/TrufflationIndex";
 import { ethers } from "ethers";
 import { contractABI, contractAddress } from "../../utils/contract";
 
-export default function Main({signer}) {
+export default function Main({ signer }) {
     const contract = new ethers.Contract(contractAddress, contractABI, signer);
-    
+
     const today = new Date();
     const [targetDate, setTargetDate] = React.useState(today.getTime());
 
@@ -27,12 +27,12 @@ export default function Main({signer}) {
     React.useEffect(() => {
         async function fetchTime() {
             try {
-                const time = await getTime(); 
+                const time = await getTime();
                 console.log(time);
                 setTargetDate((prevTime) => {
                     if (time !== prevTime) {
                         // setTimeLeft(time);
-                        return today.getTime() + time*1000;
+                        return today.getTime() + time * 1000;
                     }
                     return prevTime;
                 });
@@ -59,16 +59,24 @@ export default function Main({signer}) {
 
     return (
         <div className="Main">
-            <Jackpot signer={signer}/>
-            <div className="main_section">
-                <div className="main_section_left">
-                    <Timer targetDate={targetDate} canBet={canBet} />
-                    <TrufflationIndex signer={signer} />
-                </div>
-                <div className="main_section_right">
-                    <PurchaseTickets signer={signer} canBet={canBet} />
-                </div>
-            </div>
+            {signer ? (
+                <>
+                    <Jackpot signer={signer} />
+                    <div className="main_section">
+                        <div className="main_section_left">
+                            <Timer targetDate={targetDate} canBet={canBet} />
+                            <TrufflationIndex signer={signer} />
+                        </div>
+                        <div className="main_section_right">
+                            <PurchaseTickets signer={signer} canBet={canBet} />
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <p className="mm_not_found">
+                    PLEASE CONNECT TO <spam>METAMASK 🦊</spam> 
+                </p>
+            )}
         </div>
     );
 }

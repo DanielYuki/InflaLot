@@ -14,7 +14,7 @@ export default function UserTickets({ tickets, address }) {
     };
 
     const headingStyle = {
-        marginTop: "100px",
+        marginTop: "70px",
     };
 
     return (
